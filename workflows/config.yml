@@ -7,6 +7,14 @@ on:
         description: 'Branch para rodar a pipeline'
         required: true
         default: 'main'
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+    branches:
+      - master
+      - main
 
 jobs:
   test:
@@ -26,7 +34,7 @@ jobs:
       - name: Checkout código do repositório
         uses: actions/checkout@v3
         with:
-          ref: ${{ github.event.inputs.branch }}
+          ref: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.branch || github.ref_name }}
 
       - name: Instalar Java 17
         uses: actions/setup-java@v3
