@@ -6,7 +6,7 @@ on:
       branch:
         description: 'Branch para rodar a pipeline'
         required: true
-        default: 'master'
+        default: 'main'
 
 jobs:
   test:
