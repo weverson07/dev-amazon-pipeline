@@ -1,0 +1,53 @@
+    //metódo de clique no botão
+    
+    
+    // public void clicarTituloResultado() {
+    //     WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+    //     WebElement elemento = wait.until(ExpectedConditions.elementToBeClickable(tituloResultado));
+    //     elemento.click();
+    // }
+
+
+    //metodo de iniciação hooks
+
+    // public class PesquisaSteps {
+
+//     private WebDriver driver;
+//     private HomePage homePage;
+//     private ResultadoPage resultadoPage;
+    
+//     public PesquisaSteps() {
+//         this.resultadoPage = new ResultadoPage(driver); // INICIALIZA AQUI
+//     }
+
+//     @Before
+//     public void setup() {
+//         driver = DriverFactory.getDriver();
+//     }
+
+//     @After
+//     public void tearDown() {
+//         DriverFactory.quitDriver();
+//     }
+
+//     @Dado("que eu estou na página inicial")
+//     public void que_eu_estou_na_página_inicial() {
+//         driver.get("https://www.casasbahia.com.br/");
+//         homePage = new HomePage(driver);
+//     }
+
+//     @Quando("eu pesquiso por {string}")
+//     public void eu_pesquiso_por(String produto) {
+//         homePage.fecharModalSePresente();
+//         homePage.digitarPesquisa(produto);
+//         //homePage.clicarBuscar();
+//         //resultadoPage = new ResultadoPage(driver);
+//     }
+
+//     @Então("eu vejo resultados relacionados ao clicar")
+//     public void eu_vejo_resultados_relacionados_a() {
+//         resultadoPage.obterTituloResultado();
+//         //Assert.assertTrue("O título não contém o produto esperado", titulo.contains(produto));
+//         //Assert.assertEquals("O título exibido está incorreto", produto, titulo);
+//         //Assert.assertEquals(titulo, titulo);
+//     }
