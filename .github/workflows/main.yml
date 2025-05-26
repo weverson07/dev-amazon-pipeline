@@ -1,16 +1,16 @@
 name: Java CI with Selenium
 
 on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
   workflow_dispatch:
     inputs:
       branch:
         description: 'Branch para rodar a pipeline'
         required: true
         default: 'main'
-  push:
-    branches: [ master, main ]
-  pull_request:
-    branches: [ master, main ]
 
 jobs:
   test:
@@ -38,7 +38,7 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Instalar Google Chrome e ChromeDriver
+      - name: Instalar o Google Chrome e ChromeDriver
         run: |
           sudo apt update
           sudo apt install -y google-chrome-stable
@@ -53,5 +53,5 @@ jobs:
           google-chrome --version
           chromedriver --version
 
-      - name: Rodar testes com Maven (Chrome headless)
+      - name: Rodar testes com Maven em modo headless e debug
         run: mvn clean test -Dchrome.headless=true -e -X
